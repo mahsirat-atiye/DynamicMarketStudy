@@ -39,3 +39,7 @@ def d(j, k):
 def I(j, k):
     r, phi = cmath.polar(d(j, k))
     return r ** 2
+def f_hat_j(j):
+    sum = 0
+    for k in range(-m, m, 1):
+        sum += Wm(k) * I()
