@@ -13,6 +13,7 @@ for data in my_data:
         row["amount"] = data[2]
         row["price"] = data[3]
         data_table.append(row)
+#         luieup
 
 
 content_form = pandas.read_json(str(json.dumps(data_table)))
