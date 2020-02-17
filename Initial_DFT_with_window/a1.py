@@ -14,7 +14,7 @@ import numpy as np
 # -----------------------------------------
 import xlrd
 
-wb = xlrd.open_workbook("dedam5.xlsx")
+wb = xlrd.open_workbook("data/dedam5.xlsx")
 sheet = wb.sheet_by_index(0)
 # For row 0 and column 0
 print(sheet.cell_value(0, 5))
@@ -22,7 +22,7 @@ n = 2048
 y = sheet.cell_value(1, 5)
 x = [y] * n
 
-for i in range(2048):
+for i in range(n):
     x[i] = sheet.cell_value(1 + i, 5)
 t = [i for i in range(n)]
 m = 256
@@ -52,7 +52,7 @@ def I(j, k):
     r, phi = cmath.polar(d(j, k))
     return r ** 2
 
-
+plt.figure(1)
 for k in range(n // m):
     a = [I(0, 0)] * n
     for j in range(n):
@@ -65,8 +65,7 @@ for k in range(n // m):
         b[k_] = (a[k_ - 2] + 2 * a[k_ - 1] + 3 * a[k_] + 2 * a[k_ + 1] + a[k_ + 2]) / 9
     b[n - 2] = (a[n - 3] + a[n - 2] + a[n - 1]) / 3
     b[n - 1] = (a[n - 2] + a[n - 1]) / 2
-    fig, ax = plt.subplots()
-    ax.plot(t, b)
-    ax.set_xlabel('Time [s]')
-    ax.set_ylabel('Signal amplitude' + str(k))
-    plt.show()
+    plt.plot(t, b)
+
+
+plt.show()
