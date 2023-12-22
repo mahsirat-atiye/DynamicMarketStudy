@@ -1,0 +1,1 @@
+These are all the coding sheets, analytical documents, and visuals associated with my IT bachelor's project, titled '**_Examination of Stock Market Trends Utilizing Dynamic Fourier and Wavelet Methods, as Featured in Physica A: Statistical Mechanics and Its Applications._**'
